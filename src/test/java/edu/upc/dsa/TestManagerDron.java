@@ -6,18 +6,25 @@ import org.junit.Test;
 
 public class TestManagerDron
 {
-    private ManagerOperacionsDron fachada;
+    private DronManager fachada;
     @Before
-    public void setUp(
+    public void setUp() throws Exception
     {
-        fachada = DronManager
+        this.fachada = DronManagerImpl.getInstance();
     }
-    )
+
     @Test
-    public void testAddDron()
+    public void testAddDron() throws Exception
     {
-        ManagerFleetDronsImpl portada = ManagerFleetDronsImpl.getInstance();
         portada.addDron("1", "Dron1", "Fabricante1", "Modelo1");
-        //Comprobamso que el drons se añadio correctamente
+
     }
+    @Test
+            public void listaDronesxhorasdVueloDes()
+    {
+        portada.addDron("1", "Dron1", "Fabricante1", "Modelo1", "horasVuelo");
+    }
+
+
+
 }

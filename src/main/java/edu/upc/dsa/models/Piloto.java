@@ -3,10 +3,11 @@ import java.util.*;
 
 public class Piloto
 {
-        private String identificador;
-        private String nombre;
-        private String apellido;
-        private int horasVuelop;
+         String identificador;
+        String nombre;
+        String apellido;
+         int horasVuelop;
+         boolean Ocupado;
         private ArrayList<String> vuelosRealizados =new ArrayList<>();
         private List<Vuelo> horasRealizadas = new ArrayList<>();
 
@@ -16,6 +17,13 @@ public class Piloto
         this.apellido = apellido;
         this.nombre = nombre;
         this.horasVuelop = 0;
+        this.Ocupado =false;
+    }
+
+    public String toString()
+    {
+        return "Piloto{" + "id='" +identificador + "- nombre='" + nombre + ", apellido='" + apellido + '\''
+                + ", horasVuelop=" + horasVuelop + '}';
     }
     public ArrayList<String> listarVuelosString()
     {
@@ -69,6 +77,11 @@ public class Piloto
         this.horasVuelop = horasVuelop;
     }
 
+    public boolean disponible()
+    {
+
+        return false;
     }
+}
 
 

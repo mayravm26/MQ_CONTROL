@@ -1,5 +1,6 @@
 package edu.upc.dsa.models;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -28,7 +29,18 @@ public class Dron implements Comparable<Dron> {
         this.modelo = modelo;
         this.numVuelos = numVuelos;
         this.horasVuelo = horasVuelo;
+        this.operativo = false;
     }
+    @Override
+    public String toString()
+    {
+        return "Dron{" +
+                "id='" + id + ", nombre ='" + nom +
+                ", fabricante='" + fabricante + ", modelo='" + modelo +
+                ", horasVuelo=" + horasVuelo + ", numVuelos=" + numVuelos +
+                '}';
+    }
+
 
 
     public static void ordenarDronsxhoasVuelo() {
@@ -54,6 +66,10 @@ public class Dron implements Comparable<Dron> {
     {
         return true;
     }
+    public boolean disponible(LocalDateTime fecha, int duracion)
+    {
+
+    }
 
 
     //getysets de cada elemento
@@ -65,8 +81,13 @@ public class Dron implements Comparable<Dron> {
         this.horasVuelo = horasVuelo;
     }
 
-    public void setNom(String nom) {
+    public void setNom(String nom)
+    {
         this.nom = nom;
+    }
+    public void setId(String id)
+    {
+        this.id = id;
     }
 
     public void setHorasvuelo(int horasVuelo) {
@@ -76,6 +97,7 @@ public class Dron implements Comparable<Dron> {
     public String getNom() {
         return this.nom;
     }
+    public String getId(){ return this.id;}
 
     public int getNumVuelos() {
         return numVuelos;
